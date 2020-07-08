@@ -15,6 +15,15 @@ jobs:
         - v1-dependencies-{{ checksum "build.gradle" }}
         - v1-dependencies-
     - run: gradle dependencies
+    - run:
+           name: "Setup custom environment variables"
+          command: |
+            echo 'export LT_USERNAME="arpitg"' >> $BASH_ENV
+ 
+      - run:
+          name: "Setup custom environment variables"
+          command: |
+            echo 'export LT_ACCESS_KEY="W9syX3U064tksKRLtij9QqC3HW1QpjnerJXav4D8mp8q7bEXJS"' >> $BASH_ENV
     - save_cache:
         paths:
         - ~/.gradle
